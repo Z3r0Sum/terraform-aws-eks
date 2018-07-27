@@ -58,6 +58,10 @@ variable "eks_worker_subnet_ids" {
   type = "list"
 }
 
+variable "eks_worker_public_ip_enable" {
+  type = "string"
+}
+
 variable "region" {
   type = "string"
 }

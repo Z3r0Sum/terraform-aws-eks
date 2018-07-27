@@ -39,7 +39,7 @@ USERDATA
 }
 
 resource "aws_launch_configuration" "this" {
-  associate_public_ip_address = true
+  associate_public_ip_address = "${var.eks_worker_public_ip_enable}"
   iam_instance_profile        = "${var.eks_worker_instance_profile}"
   image_id                    = "${data.aws_ami.eks_worker.id}"
   instance_type               = "${var.eks_worker_instance_type}"
