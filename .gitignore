@@ -1,0 +1,11 @@
+.terraform/
+terraform.tfstate.d/
+*.tfstate.backup
+*config.tf
+
+*.pem
+*.pub
+
+*.tfvars
+
+terraform.log
