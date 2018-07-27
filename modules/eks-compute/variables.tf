@@ -10,16 +10,17 @@ variable "eks_cluster_endpoint" {
   type = "string"
 }
 
-variable "eks_max_pods" {
+variable "eks_worker_max_pods" {
   type = "string"
 }
 
-variable "eks_ssh_key_name" {
+variable "eks_worker_ssh_key_name" {
   type = "string"
 }
 
 variable "eks_worker_ami_name" {
-  type = "string"
+  type    = "string"
+  default = "eks-worker-v20"
 }
 
 variable "eks_worker_instance_type" {
@@ -59,7 +60,8 @@ variable "eks_worker_subnet_ids" {
 }
 
 variable "eks_worker_public_ip_enable" {
-  type = "string"
+  type    = "string"
+  default = "false"
 }
 
 variable "region" {

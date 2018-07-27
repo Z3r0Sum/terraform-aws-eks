@@ -2,41 +2,46 @@ variable "eks_cluster_name" {
   type = "string"
 }
 
-variable "eks_default_ssh_key_name" {
+variable "eks_cluster_version" {
+  type = "string"
+  default = "1.10"
+}
+
+variable "eks_worker_ssh_key_name" {
   type = "string"
 }
 
-variable "eks_default_worker_group_name" {
+variable "eks_worker_group_name" {
   type    = "string"
   default = "default"
 }
 
-variable "eks_default_worker_instance_type" {
+variable "eks_worker_instance_type" {
   type    = "string"
   default = "t2.medium"
 }
 
-variable "eks_default_worker_desired_capacity" {
+variable "eks_worker_desired_capacity" {
   type    = "string"
   default = "1"
 }
 
-variable "eks_default_worker_max_size" {
+variable "eks_worker_max_size" {
   type    = "string"
   default = "1"
 }
 
-variable "eks_default_worker_min_size" {
+variable "eks_worker_min_size" {
   type    = "string"
   default = "1"
 }
 
-variable "eks_default_max_pods" {
+variable "eks_worker_max_pods" {
   type    = "string"
   default = "17"
 }
 
-variable "eks_default_worker_ami_name" {
+variable "eks_worker_ami_name" {
   type    = "string"
   default = "eks-worker-v20"
 }

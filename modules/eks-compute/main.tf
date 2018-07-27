@@ -25,7 +25,7 @@ INTERNAL_IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 sed -i s,MASTER_ENDPOINT,${var.eks_cluster_endpoint},g /var/lib/kubelet/kubeconfig
 sed -i s,CLUSTER_NAME,${var.eks_cluster_name},g /var/lib/kubelet/kubeconfig
 sed -i s,REGION,${var.region},g /etc/systemd/system/kubelet.service
-sed -i s,MAX_PODS,${var.eks_max_pods},g /etc/systemd/system/kubelet.service
+sed -i s,MAX_PODS,${var.eks_worker_max_pods},g /etc/systemd/system/kubelet.service
 sed -i s,MASTER_ENDPOINT,${var.eks_cluster_endpoint},g /etc/systemd/system/kubelet.service
 sed -i s,INTERNAL_IP,$INTERNAL_IP,g /etc/systemd/system/kubelet.service
 DNS_CLUSTER_IP=10.100.0.10
@@ -43,7 +43,7 @@ resource "aws_launch_configuration" "this" {
   iam_instance_profile        = "${var.eks_worker_instance_profile}"
   image_id                    = "${data.aws_ami.eks_worker.id}"
   instance_type               = "${var.eks_worker_instance_type}"
-  key_name                    = "${var.eks_ssh_key_name}"
+  key_name                    = "${var.eks_worker_ssh_key_name}"
   name_prefix                 = "${var.eks_cluster_name}-${var.eks_worker_group_name}"
   security_groups             = ["${var.eks_worker_sg_id}"]
   user_data_base64            = "${base64encode(local.node_userdata)}"
