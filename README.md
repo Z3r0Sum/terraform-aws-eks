@@ -96,3 +96,7 @@ Terraform version 0.11.7 or newer is required for this module to work.
 | eks_node_iam_role_arn | EKS Node IAM Role |
 | eks_node_instance_profile_name | Worker Nodes IAM Instance Profile Name |
 | kubeconfig | K8S Kubeconfig used to access the cluster via 'kubectl' |
+
+## License
+
+Apache 2 Licensed. See LICENSE for full details.
