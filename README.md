@@ -9,7 +9,7 @@
 
 ```hcl
 module "eks" {
-  source = "Z3r0Sum/terraform-aws-eks"
+  source = "Z3r0Sum/eks/aws"
 
   eks_cluster_name                    = "eks-test"
   region                              = "us-east-1"
@@ -31,7 +31,7 @@ Additional worker pools:
 
 ```hcl
 module "test_pool" {
-  source = "Z3r0Sum/terraform-aws-eks/modules/eks-compute"
+  source = "Z3r0Sum/eks/aws/modules/eks-compute"
 
   eks_cluster_name            = "eks-test"
   eks_cluster_ca_data         = "${module.eks.eks_cluster_ca_data}"
