@@ -31,7 +31,7 @@ Additional worker pools:
 
 ```hcl
 module "test_pool" {
-  source = "Z3r0Sum/eks/aws/modules/eks-compute"
+  source = "Z3r0Sum/eks/aws//modules/eks-compute"
 
   eks_cluster_name            = "eks-test"
   eks_cluster_ca_data         = "${module.eks.eks_cluster_ca_data}"
